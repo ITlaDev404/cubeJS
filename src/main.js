@@ -26,11 +26,10 @@ const cube = new THREE.Mesh(geometry, material)
 
 scene.add(cube)
 // prespective of the camera 
-camera.position.z = 3
-camera.position.y = 1
-camera.position.x = 1
+camera.position.set(1,1,3)
+camera.lookAt(cube.position)
 
 //background color 
-scene.background = new THREE.Color(0x00ff00)
+scene.background = new THREE.Color(0xFEBFBF )
 
 renderer.render(scene, camera)
