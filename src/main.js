@@ -16,12 +16,12 @@ const renderer = new THREE.WebGLRenderer({
 
 renderer.setSize(window.innerWidth, window.innerHeight)
 document.body.appendChild(renderer.domElement)
-
+//cube element
 const geometry = new THREE.BoxGeometry()
 const material = new THREE.MeshBasicMaterial({
-  color: 0x00ff00
+  color: 0xff0000
 })
-
+//create the cube
 const cube = new THREE.Mesh(geometry, material)
 
 scene.add(cube)
