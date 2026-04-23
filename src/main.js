@@ -25,7 +25,9 @@ const material = new THREE.MeshBasicMaterial({
 const cube = new THREE.Mesh(geometry, material)
 
 scene.add(cube)
-
-camera.position.z = 5
+// prespective of the camera 
+camera.position.z = 3
+camera.position.y = 1
+camera.position.x = 1
 
 renderer.render(scene, camera)
