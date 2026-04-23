@@ -30,4 +30,7 @@ camera.position.z = 3
 camera.position.y = 1
 camera.position.x = 1
 
+//background color 
+scene.background = new THREE.Color(0x00ff00)
+
 renderer.render(scene, camera)
