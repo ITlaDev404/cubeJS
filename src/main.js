@@ -24,6 +24,13 @@ const material = new THREE.MeshBasicMaterial({
 //create the cube
 const cube = new THREE.Mesh(geometry, material)
 
+//cube Animation
+
+cube.rotation.x += 0.01
+cube.rotation.y += 0.01
+
+cube.requ
+
 scene.add(cube)
 // prespective of the camera 
 camera.position.set(1,1,3)
@@ -32,4 +39,13 @@ camera.lookAt(cube.position)
 //background color 
 scene.background = new THREE.Color(0xFEBFBF )
 
-renderer.render(scene, camera)
+function animate() {
+  requestAnimationFrame(animate)
+
+  cube.rotation.x += 0.01
+  cube.rotation.y += 0.01
+
+  renderer.render(scene, camera)
+}
+
+animate()
