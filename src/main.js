@@ -15,8 +15,11 @@ const renderer = new THREE.WebGLRenderer({
 })
 
 renderer.setSize(window.innerWidth, window.innerHeight)
+//to improve the textur 
+renderer.setPixelRatio(window.devicePixelRatio)
+
 document.body.appendChild(renderer.domElement)
-//cube element
+//cube elements
 const geometry = new THREE.BoxGeometry()
 const material = new THREE.MeshBasicMaterial({
   color: 0xff0000
@@ -24,28 +27,28 @@ const material = new THREE.MeshBasicMaterial({
 //create the cube
 const cube = new THREE.Mesh(geometry, material)
 
-//cube Animation
 
-cube.rotation.x += 0.01
-cube.rotation.y += 0.01
-
-cube.requ
 
 scene.add(cube)
 // prespective of the camera 
-camera.position.set(1,1,3)
+camera.position.set(1, 1, 3)
 camera.lookAt(cube.position)
 
 //background color 
-scene.background = new THREE.Color(0xFEBFBF )
+scene.background = new THREE.Color(0xFEBFBF)
+// cube animation 
 
-function animate() {
-  requestAnimationFrame(animate)
+function animateCube() {
+  requestAnimationFrame(animateCube)
 
-  cube.rotation.x += 0.01
-  cube.rotation.y += 0.01
+cube.scale.x  += 0.0001
+cube.scale.y  += 0.0001
+cube.scale.z  += 0.0001
+cube.rotation.y += 0.001
+
+
 
   renderer.render(scene, camera)
 }
 
-animate()
+animateCube();
